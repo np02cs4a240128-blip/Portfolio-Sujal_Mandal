@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Graphic Designer – Portfolio</title>
-
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
+  <!-- THEME TOGGLE -->
+  <button id="theme-toggle" class="theme-toggle">🌙</button>
+
+  <!-- BACK TO TOP -->
+  <button id="back-to-top" class="back-to-top">↑</button>
+
   <!-- HEADER -->
   <header class="header">
-    <div class="container">
+    <div class="container header-inner">
       <h1 class="logo">Sujal Mandal<span>.</span></h1>
       <nav>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#services">Services</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#media">Media</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
+  <!-- HERO -->
+  <section class="hero animate-on-scroll">
     <div class="container hero-content">
       <div class="hero-text">
-        <h2>I’m a <span>Graphic Designer</span></h2>
-        <p>I create modern logos, posters, brand identities, and social media designs that make your business stand out.</p>
-        <a href="#portfolio" class="btn">See My Work</a>
+        <h2 class="animate-up">I’m a <span>Graphic Designer</span></h2>
+        <p class="animate-up">I create modern logos, posters, brand identities, and social media designs that make your business stand out.</p>
+        <a href="#portfolio" class="btn animate-up">See My Work</a>
       </div>
       <div class="hero-img">
         <img src="image/Profile.JPG" alt="Designer Photo">
@@ -40,91 +47,136 @@
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="about section container">
+  <section id="about" class="about section container animate-on-scroll">
     <h2>About Me</h2>
-    <p>I’m a creative graphic designer with experience in branding, digital art, social media content, and layout design. I use tools like Photoshop, Illustrator, Canva, and Figma to create professional visuals. Accomplished Photographer and Graphic Designer based in Biratnagar,
-Nepal, with a proven track record in enhancing visual appeal through expert
-editing and retouching. Demonstrates proficiency in graphic design, brand
-consistency, and digital design, creating impactful visuals for commercial
-and advertising purposes. Adept at managing multiple projects
-simultaneously while maintaining high-quality output and exceeding client
-expectations. Skilled in customer communication and social media
-management, with a keen eye for detail and time management. Aspires to
-leverage creative expertise to drive innovative visual solutions in the digital
-landscape.
-</p>
+    <p>
+      I’m a creative graphic designer with experience in branding, digital art, social media content, and layout design.
+      Skilled in Photoshop, Illustrator, Canva, and Figma. Based in Biratnagar, Nepal.
+    </p>
   </section>
 
   <!-- PORTFOLIO -->
-  <section id="portfolio" class="portfolio section container">
+  <section id="portfolio" class="portfolio section container animate-on-scroll">
     <h2>My Work</h2>
 
     <div class="portfolio-grid">
-
       <div class="portfolio-card">
-        <img src="image/work1.jpg" alt="Design Work 1">
+        <img src="image/work1.jpg" alt="">
         <h3>Branding Package</h3>
       </div>
 
       <div class="portfolio-card">
-        <img src="image/work2.jpg" alt="Design Work 2">
+        <img src="image/work2.jpg" alt="">
         <h3>Creative Poster</h3>
       </div>
 
       <div class="portfolio-card">
-        <img src="image/work3.jpg" alt="Design Work 3">
+        <img src="image/work3.jpg" alt="">
         <h3>Logo Design</h3>
       </div>
 
       <div class="portfolio-card">
-        <img src="image/work4.jpg" alt="Design Work 4">
+        <img src="image/work4.jpg" alt="">
         <h3>Social Media Banner</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section container animate-on-scroll">
+    <h2>Skills</h2>
+
+    <div class="skills-grid">
+      <div>
+        <div class="skill-title">
+          <span>Photoshop</span><span>90%</span>
+        </div>
+        <div class="skill-bar" data-percent="90">
+          <div class="skill-fill"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="skill-title">
+          <span>Illustrator</span><span>80%</span>
+        </div>
+        <div class="skill-bar" data-percent="80">
+          <div class="skill-fill"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="skill-title">
+          <span>Canva</span><span>95%</span>
+        </div>
+        <div class="skill-bar" data-percent="95">
+          <div class="skill-fill"></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="skill-title">
+          <span>Figma</span><span>70%</span>
+        </div>
+        <div class="skill-bar" data-percent="70">
+          <div class="skill-fill"></div>
+        </div>
       </div>
 
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="services section container">
-    <h2>Services</h2>
+  <!-- MEDIA SECTION -->
+  <section id="media" class="section container animate-on-scroll">
+    <h2>Media Showcase</h2>
 
-    <div class="service-grid">
-
-      <div class="service-card">
-        <h3>Logo Design</h3>
-        <p>Creative, memorable logos for brands and businesses.</p>
+    <div class="media-row">
+      <div class="media-block">
+        <h3>Video</h3>
+        <video controls>
+          <source src="video/Portfolio.mp4" type="video/mp4">
+        </video>
       </div>
 
-      <div class="service-card">
-        <h3>Poster Design</h3>
-        <p>Beautiful posters for events, music, product promotions, etc.</p>
+      <div class="media-block">
+        <h3>Audio</h3>
+        <audio controls>
+          <source src="audio/Music.mp3" type="audio/mp3">
+        </audio>
       </div>
 
-      <div class="service-card">
-        <h3>Brand Identity</h3>
-        <p>Complete branding — color palette, typography, business card.</p>
+      <div class="media-block">
+        <h3>Canvas Demo</h3>
+        <canvas id="demo-canvas" width="300" height="120"></canvas>
       </div>
-
-      <div class="service-card">
-        <h3>Social Media Design</h3>
-        <p>Professional templates for Instagram, Facebook, TikTok.</p>
-      </div>
-
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="contact section container">
-    <h2>Contact Me</h2>
-    <p>Want to work together? Send me a message!</p>
+<section id="contact" class="contact section container animate-on-scroll">
+  <h2>Contact Me</h2>
+  <p>Want to work together? Send me a message!</p>
 
-    <form id="contactForm">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button class="btn" type="submit">Send Message</button>
-    </form>
-  </section>
+  <form id="contactForm" novalidate>
+    <input id="nameInput" type="text" placeholder="Your Name" required class="form-field">
+    <input id="emailInput" type="email" placeholder="Your Email" required class="form-field">
+    <textarea id="messageInput" rows="5" placeholder="Your Message" required class="form-field"></textarea>
+
+    <p id="form-msg" class="form-msg" aria-live="polite"></p>
+
+    <button id="submitBtn" class="btn glow" type="submit">
+      <span class="btn-text">Send Message</span>
+      <span class="btn-spinner" aria-hidden="true"></span>
+    </button>
+  </form>
+
+  <!-- success animation overlay (hidden by default) -->
+  <div id="submit-success" class="submit-success" aria-hidden="true">
+    <svg viewBox="0 0 52 52" class="checkmark"><path d="M14 27 l7 7 17-17" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <p>Message sent!</p>
+  </div>
+</section>
+
 
   <!-- FOOTER -->
   <footer>
@@ -132,6 +184,6 @@ landscape.
   </footer>
 
   <script src="script.js"></script>
-
 </body>
+
 </html>

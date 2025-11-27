@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Form Details</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* small overrides for the details card */
+    .details-wrap { max-width:800px; margin:56px auto; padding:22px; background:#fff; border-radius:12px; box-shadow:0 12px 36px rgba(2,6,23,0.06); }
+    html.dark-mode .details-wrap { background: var(--card); color: var(--fg-light); border:1px solid rgba(255,255,255,0.04);}
+    .details-row { margin-bottom:12px; }
+    .details-row strong { display:inline-block; width:100px; }
+    .controls { margin-top:18px; display:flex; gap:12px; align-items:center; }
+    .small-muted { color:var(--muted); font-size:.95rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="details-wrap">
+      <h2>Submitted Contact Details</h2>
+      <div id="no-data" class="small-muted">Loading submitted data...</div>
+
+      <div id="details" style="display:none;">
+        <div class="details-row"><strong>Name:</strong> <span id="detailName"></span></div>
+        <div class="details-row"><strong>Email:</strong> <span id="detailEmail"></span></div>
+        <div class="details-row"><strong>Message:</strong> <div id="detailMessage" style="white-space:pre-wrap; margin-top:6px;"></div></div>
+        <div class="details-row"><strong>Sent at:</strong> <span id="detailTime"></span></div>
+
+        <div class="controls">
+          <a id="backHome" href="index.html" class="btn">Back Home</a>
+          <button id="clearData" class="btn">Clear Saved Data</button>
+          <a id="mailtoBtn" class="btn btn-ghost" href="#" target="_blank">Open Email Client</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const raw = localStorage.getItem('portfolio_contact');
+    const noDataEl = document.getElementById('no-data');
+    const detailsEl = document.getElementById('details');
+    if (!raw) {
+      noDataEl.textContent = 'No submitted form data found in localStorage.';
+    } else {
+      try {
+        const data = JSON.parse(raw);
+        document.getElementById('detailName').textContent = data.name || '';
+        document.getElementById('detailEmail').textContent = data.email || '';
+        document.getElementById('detailMessage').textContent = data.message || '';
+        document.getElementById('detailTime').textContent = data.submittedAt ? new Date(data.submittedAt).toLocaleString() : '';
+        noDataEl.style.display = 'none';
+        detailsEl.style.display = 'block';
+
+        const mailto = `mailto:${encodeURIComponent(data.email)}?subject=${encodeURIComponent('Re: your message')}&body=${encodeURIComponent('Hi ' + data.name + ',%0D%0A%0D%0AThanks for your message:%0D%0A' + data.message)}`;
+        document.getElementById('mailtoBtn').setAttribute('href', mailto);
+      } catch (e) {
+        noDataEl.textContent = 'Stored data was invalid or corrupted.';
+        console.warn(e);
+      }
+    }
+
+    document.getElementById('clearData').addEventListener('click', () => {
+      localStorage.removeItem('portfolio_contact');
+      location.reload();
+    });
+  </script>
+</body>
+</html>
